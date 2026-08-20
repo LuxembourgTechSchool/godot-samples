@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://fsmtd4rv87oh"]
+
+[ext_resource type="PackedScene" uid="uid://7w78ecyw85cg" path="res://Pickup Demo/Player.tscn" id="1_hwcmy"]
+[ext_resource type="PackedScene" uid="uid://tmoqnu6byix6" path="res://Pickup Demo/pickable.tscn" id="2_jax6m"]
+
+[node name="PickUpDemo" type="Node2D" unique_id=391314821]
+
+[node name="Pickable" parent="." unique_id=175898423 instance=ExtResource("2_jax6m")]
+position = Vector2(896, 239)
+
+[node name="Pickable2" parent="." unique_id=446354192 instance=ExtResource("2_jax6m")]
+position = Vector2(753, 474)
+
+[node name="Player" parent="." unique_id=395055543 instance=ExtResource("1_hwcmy")]
+position = Vector2(476, 309)
+
+[node name="Label" type="Label" parent="." unique_id=2093912356]
+offset_left = 503.0
+offset_top = 14.0
+offset_right = 813.0
+offset_bottom = 76.0
+text = "Press E to pick up objects"

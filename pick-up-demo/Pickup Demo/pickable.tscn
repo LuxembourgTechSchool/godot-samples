@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://tmoqnu6byix6"]
+
+[ext_resource type="Texture2D" uid="uid://b4rvkfb20lk7m" path="res://kenney_shape-characters/PNG/Default/blue_body_square.png" id="1_yqccr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3pyb"]
+size = Vector2(125, 126)
+
+[node name="Pickable" type="RigidBody2D" unique_id=175898423 groups=["pickable"]]
+collision_layer = 3
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1718119897]
+position = Vector2(3, -3)
+shape = SubResource("RectangleShape2D_b3pyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=550474774]
+position = Vector2(4.9999695, 3.0517578e-05)
+scale = Vector2(1.5109378, 1.5218753)
+texture = ExtResource("1_yqccr")

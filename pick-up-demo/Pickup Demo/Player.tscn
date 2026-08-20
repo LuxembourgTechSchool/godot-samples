@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://7w78ecyw85cg"]
+
+[ext_resource type="Script" uid="uid://b753hse2i413p" path="res://Pickup Demo/pickup_demo.gd" id="1_d584x"]
+[ext_resource type="Texture2D" uid="uid://cme10jm8lk6bq" path="res://kenney_shape-characters/PNG/Default/hand_yellow_open.png" id="2_j3pc4"]
+[ext_resource type="Texture2D" uid="uid://dkgxoteetddwq" path="res://kenney_shape-characters/PNG/Default/yellow_body_squircle.png" id="3_su51x"]
+[ext_resource type="Texture2D" uid="uid://x83jnyx4fjt5" path="res://kenney_shape-characters/PNG/Default/face_a.png" id="4_su51x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkpjr"]
+size = Vector2(125, 130.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqaft"]
+radius = 104.0769
+
+[node name="Player" type="CharacterBody2D" unique_id=395055543]
+script = ExtResource("1_d584x")
+
+[node name="collider" type="CollisionShape2D" parent="." unique_id=1291701526]
+position = Vector2(1.5, -5.75)
+shape = SubResource("RectangleShape2D_lkpjr")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1885967051]
+collision_layer = 0
+collision_mask = 2
+
+[node name="pickup" type="CollisionShape2D" parent="PickupArea" unique_id=539700333]
+modulate = Color(0.58431375, 1, 1, 1)
+position = Vector2(133, -58)
+shape = SubResource("CircleShape2D_qqaft")
+debug_color = Color(0.78378737, 0.26415345, 0.85495245, 0.41960785)
+
+[node name="HandPosition" type="Marker2D" parent="." unique_id=1505945996]
+position = Vector2(127.775, -58)
+
+[node name="Hand" type="Sprite2D" parent="HandPosition" unique_id=341112082]
+z_index = 1
+z_as_relative = false
+position = Vector2(6, -2)
+texture = ExtResource("2_j3pc4")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1257521778]
+position = Vector2(4, -4)
+scale = Vector2(1.481249, 1.5156254)
+texture = ExtResource("3_su51x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=1595534163]
+texture = ExtResource("4_su51x")
+
+[node name="DropOffPosition" type="Marker2D" parent="." unique_id=983807270]
+position = Vector2(140, 11)
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="PickupArea" to="." method="_on_pickup_area_body_exited"]
