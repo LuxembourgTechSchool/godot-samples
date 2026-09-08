@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d1rafogmvf070"]
+
+[ext_resource type="Script" uid="uid://de8xbs20nciqo" path="res://Scenes/main.gd" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://dyhpgo8ueetdu" path="res://Assets/bg.png" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://rawwm3dl6frj" path="res://Scenes/bird.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://b6r23hmc3drn8" path="res://Scenes/ground.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://xta7m2f3ywye" path="res://Scenes/pipe.tscn" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://c7yd87cj5p4ne" path="res://Scenes/game_over.tscn" id="6_21xkr"]
+
+[node name="Main" type="Node" unique_id=1951046054]
+script = ExtResource("1_8gbba")
+pipe_scene = ExtResource("2_kry3j")
+scroll_speed = 2
+
+[node name="Ground" parent="." unique_id=1811138420 instance=ExtResource("2_jjvhh")]
+z_index = 20
+position = Vector2(0, 851)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1788555249]
+texture = ExtResource("1_jjgbg")
+offset = Vector2(432, 384)
+
+[node name="Bird" parent="." unique_id=864503452 instance=ExtResource("2_bo1nx")]
+position = Vector2(39, 40)
+
+[node name="PipeTimer" type="Timer" parent="." unique_id=1274760503]
+wait_time = 1.5
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1123839966]
+z_index = 100
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" parent="." unique_id=1391467675 instance=ExtResource("6_21xkr")]
+
+[connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
+[connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]
