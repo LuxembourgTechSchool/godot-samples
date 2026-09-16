@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbdylathjcrrf"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_7wcun"]
+[ext_resource type="Shader" uid="uid://daowaxy04irge" path="res://water.gdshader" id="2_dcmoc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmoj4"]
+shader = ExtResource("2_dcmoc")
+shader_parameter/strength = 0.01
+shader_parameter/speed = 2.0
+shader_parameter/frequency = 10.0
+
+[node name="water" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_7wcun")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_qmoj4")
+position = Vector2(0, 136)
+texture = ExtResource("1_7wcun")

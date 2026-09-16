@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxxbmsj2tortv"]
+
+[ext_resource type="Script" uid="uid://w51d5j5jnxrf" path="res://scripts/monster.gd" id="1_mrqeg"]
+[ext_resource type="Texture2D" uid="uid://6rafd0ytc3sf" path="res://Images/Enemy Square.png" id="2_1cbnp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c47ug"]
+size = Vector2(73, 73)
+
+[node name="Monster" type="CharacterBody2D" unique_id=234452281]
+scale = Vector2(0.5964556, 0.597905)
+script = ExtResource("1_mrqeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618452261]
+position = Vector2(0, 5.684342e-14)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_c47ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1433001232]
+position = Vector2(-1.0000005, 1.0000005)
+scale = Vector2(0.14671493, 0.15441173)
+texture = ExtResource("2_1cbnp")

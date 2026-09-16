@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cbs5qmawi28ev"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_46y4c"]
+[ext_resource type="Shader" uid="uid://dgvasslt31ugi" path="res://dissolve.gdshader" id="2_toh77"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46y4c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsah1"]
+shader = ExtResource("2_toh77")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_46y4c")
+shader_parameter/dissolve_amount = 0.5070000240825
+
+[node name="dissolve" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_46y4c")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_dsah1")
+position = Vector2(0, 136)
+texture = ExtResource("1_46y4c")

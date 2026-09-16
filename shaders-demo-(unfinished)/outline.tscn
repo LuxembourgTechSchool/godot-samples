@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://3xsb6ni1q4cq"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_mpib5"]
+[ext_resource type="Shader" uid="uid://dwxptcujtyg4v" path="res://outline.gdshader" id="2_dsio1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhfun"]
+shader = ExtResource("2_dsio1")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/outline_size = 1.0
+
+[node name="outline" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_mpib5")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_vhfun")
+position = Vector2(0, 136)
+texture = ExtResource("1_mpib5")

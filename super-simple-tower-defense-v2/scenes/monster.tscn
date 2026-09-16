@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cxxbmsj2tortv"]
+
+[ext_resource type="Script" uid="uid://w51d5j5jnxrf" path="res://scripts/monster.gd" id="1_mrqeg"]
+[ext_resource type="Texture2D" uid="uid://d34suhsmmttlb" path="res://Images/Enemy Square.png" id="2_1cbnp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c47ug"]
+size = Vector2(56, 52)
+
+[node name="Monster" type="CharacterBody2D" unique_id=234452281]
+script = ExtResource("1_mrqeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618452261]
+shape = SubResource("RectangleShape2D_c47ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1433001232]
+position = Vector2(0, 1.1920929e-07)
+scale = Vector2(0.13349107, 0.13093893)
+texture = ExtResource("2_1cbnp")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1626126212]
+offset_left = -19.0
+offset_top = -49.0
+offset_right = 21.0
+offset_bottom = -43.0
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false

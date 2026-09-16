@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqsdnw0myihp4"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_gbcri"]
+[ext_resource type="Shader" uid="uid://bd0ahbg61pk30" path="res://color_tint.gdshader" id="2_tp01u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5185i"]
+shader = ExtResource("2_tp01u")
+shader_parameter/tint_color = Color(1, 0.2, 0.2, 1)
+
+[node name="color_tint" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_gbcri")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_5185i")
+position = Vector2(0, 136)
+texture = ExtResource("1_gbcri")

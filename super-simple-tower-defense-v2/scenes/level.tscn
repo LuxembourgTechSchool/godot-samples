@@ -1,0 +1,129 @@
+[gd_scene format=4 uid="uid://dk710d25qpt2d"]
+
+[ext_resource type="Script" uid="uid://boa4miyimfj7b" path="res://scripts/level.gd" id="1_w8frs"]
+[ext_resource type="PackedScene" uid="uid://cxxbmsj2tortv" path="res://scenes/monster.tscn" id="2_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://c2pfpknmi2u23" path="res://scenes/tower.tscn" id="3_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://c7t4h4c7u4msh" path="res://Images/dungeon.png" id="4_mx8sn"]
+[ext_resource type="Texture2D" uid="uid://bxelwkeh51lt4" path="res://Images/Cream Pallet.png" id="5_ppgk2"]
+
+[sub_resource type="Curve2D" id="Curve2D_5xgho"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131.38739, 68.96693, 0, 0, 0, 0, 131.38739, 579.3058, 0, 0, 0, 0, 1081.5856, 579.3058, 0, 0, 0, 0, 1081.5856, 522.6015, 0, 0, 0, 0, 1081.5856, 125.67125, 0, 0, 0, 0, 606.48645, 125.67125, 0, 0, 0, 0, 606.48645, 352.48853)
+}
+point_count = 7
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppgk2"]
+texture = ExtResource("4_mx8sn")
+texture_region_size = Vector2i(128, 128)
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+11:1/0 = 0
+10:1/0 = 0
+9:1/0 = 0
+8:1/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:3/0 = 0
+10:3/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+11:5/0 = 0
+10:5/0 = 0
+9:5/0 = 0
+8:5/0 = 0
+7:5/0 = 0
+6:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+10:7/0 = 0
+9:7/0 = 0
+8:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+11:10/0 = 0
+10:10/0 = 0
+10:9/0 = 0
+9:9/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+8:11/0 = 0
+7:11/0 = 0
+6:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2r41h"]
+texture = ExtResource("5_ppgk2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2r41h"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_ppgk2")
+sources/1 = SubResource("TileSetAtlasSource_2r41h")
+
+[node name="level" type="Node2D" unique_id=1108775730]
+script = ExtResource("1_w8frs")
+monster_scene = ExtResource("2_mx8sn")
+tower_scene = ExtResource("3_ppgk2")
+
+[node name="MonsterPath" type="Path2D" parent="." unique_id=1512061659]
+position = Vector2(-77.59224, -77.84034)
+scale = Vector2(1.0776699, 1.1286618)
+curve = SubResource("Curve2D_5xgho")
+
+[node name="Monsters" type="Node2D" parent="." unique_id=189851592]
+
+[node name="Towers" type="Node2D" parent="." unique_id=714023114]
+
+[node name="MonsterSpawnTimer" type="Timer" parent="." unique_id=1149904862]
+autostart = true
+
+[node name="Grass" type="TileMapLayer" parent="." unique_id=1154937069]
+show_behind_parent = true
+tile_map_data = PackedByteArray("AAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAMAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAACAAEAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_2r41h")
+
+[node name="Road" type="TileMapLayer" parent="." unique_id=1017458436]
+show_behind_parent = true
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAAAAAEAAQABAAAAAAAAAAIAAQABAAAAAAAAAAMAAQABAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQABAAAAAAAFAAQAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAIAAMAAQABAAAAAAAIAAIAAQABAAAAAAAIAAEAAQABAAAAAAAIAAAAAQABAAAAAAAHAAAAAQABAAAAAAAGAAAAAQABAAAAAAAFAAAAAQABAAAAAAAEAAAAAQABAAAAAAAEAAEAAQABAAAAAAAEAAIAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_2r41h")

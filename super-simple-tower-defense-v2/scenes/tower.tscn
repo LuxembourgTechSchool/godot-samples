@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2pfpknmi2u23"]
+
+[ext_resource type="Script" uid="uid://bl1k73tl65uh3" path="res://scripts/tower.gd" id="1_vedim"]
+[ext_resource type="PackedScene" uid="uid://bib6g8p57vtqb" path="res://scenes/bullet.tscn" id="2_jbe1c"]
+[ext_resource type="Texture2D" uid="uid://rc3t1vookkvf" path="res://Images/Triangle Tower.png" id="3_ktxwe"]
+
+[node name="Tower" type="Node2D" unique_id=813822457]
+script = ExtResource("1_vedim")
+bullet_scene = ExtResource("2_jbe1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=355779285]
+position = Vector2(1.0000019, 7.6293945e-06)
+rotation = 1.5705254
+scale = Vector2(0.09787473, 0.13678224)
+texture = ExtResource("3_ktxwe")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dp13asrk2fe5f"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_vv1au"]
+[ext_resource type="Shader" uid="uid://7i8k655m0v28" path="res://gray_scale.gdshader" id="2_ga4wr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6f43y"]
+shader = ExtResource("2_ga4wr")
+
+[node name="gray_scale" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_vv1au")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_6f43y")
+position = Vector2(0, 136)
+texture = ExtResource("1_vv1au")

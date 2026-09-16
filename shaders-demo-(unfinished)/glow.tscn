@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brjowcbt6k3a8"]
+
+[ext_resource type="Texture2D" uid="uid://d2qkhtxp6mv61" path="res://icon.svg" id="1_mhv31"]
+[ext_resource type="Shader" uid="uid://bmhfvf4a6w4l7" path="res://glow.gdshader" id="2_2qoh0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvcer"]
+shader = ExtResource("2_2qoh0")
+shader_parameter/glow_color = Color(0.46997398, 0.42350835, 0.27159438, 1)
+shader_parameter/intensity = 1.0
+
+[node name="glow" type="Node2D" unique_id=100377226]
+
+[node name="Original Sprite" type="Sprite2D" parent="." unique_id=174899349]
+texture = ExtResource("1_mhv31")
+
+[node name="Shader Sprite" type="Sprite2D" parent="." unique_id=1746005584]
+material = SubResource("ShaderMaterial_xvcer")
+position = Vector2(0, 136)
+texture = ExtResource("1_mhv31")
